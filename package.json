@@ -10,7 +10,7 @@
     "preview": "nuxi preview",
     "module": "nuxi init -t module my-module",
     "start": "node .output/server/index.mjs",
-    "lint": "eslint --fix .",
+    "lint": "eslint --fix . --ext vue,js,ts,jsx,tsx,cjs,cts,mjs,mts",
     "test:ui": "vitest --ui",
     "test:unit": "vitest --run --reporter verbose",
     "test:coverage": "vitest run --coverage",
@@ -38,6 +38,7 @@
     "@tiptap/pm": "^2.0.4",
     "@tiptap/starter-kit": "^2.0.4",
     "@tiptap/vue-3": "^2.0.4",
+    "@typescript-eslint/parser": "6.2.1",
     "@unocss/nuxt": "0.54.1",
     "@vitejs/plugin-vue": "^4.2.3",
     "@vitest/ui": "^0.34.1",
@@ -47,9 +48,11 @@
     "histoire": "^0.16.2",
     "jsdom": "^22.1.0",
     "nuxt": "3.6.5",
+    "prettier": "2.8.8",
     "sass": "^1.64.2",
     "typescript": "^5.1.6",
     "unstorage": "^1.8.0",
-    "vitest": "^0.34.1"
+    "vitest": "^0.34.1",
+    "vue-eslint-parser": "^9.3.1"
   }
 }

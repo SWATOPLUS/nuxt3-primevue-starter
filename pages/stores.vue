@@ -1,13 +1,13 @@
 <script setup lang='ts'>
-import { useDataStore, useThemeStore, useCounterStore } from '@/stores'
+import { useDataStore, useThemeStore, useCounterStore } from '@/stores';
 
-const themeStore = useThemeStore()
-const dataStore = useDataStore()
-const counterStore = useCounterStore()
+const themeStore = useThemeStore();
+const dataStore = useDataStore();
+const counterStore = useCounterStore();
 
 onMounted(async () => {
-  await dataStore.initData()
-})
+  await dataStore.initData();
+});
 </script>
 
 <template>
@@ -45,7 +45,10 @@ onMounted(async () => {
       {{ counterStore.name }} clicked {{ counterStore.count }} times. Doubled value: {{ counterStore.doubleCount }}
     </div>
     <div class="mt-3">
-      <Button :label="counterStore.name" @click="counterStore.increment()" />
+      <Button
+        :label="counterStore.name"
+        @click="counterStore.increment()"
+      />
     </div>
   </div>
 </template>

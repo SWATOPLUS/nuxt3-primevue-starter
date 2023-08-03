@@ -1,23 +1,23 @@
 <script setup lang='ts'>
-import { FilterMatchMode } from 'primevue/api'
-import { usePrimeDataTable } from '#imports'
-import { useDataStore } from '@/stores'
+import { FilterMatchMode } from 'primevue/api';
+import { usePrimeDataTable } from '#imports';
+import { useDataStore } from '@/stores';
 
-const { tableData, filters, dataTableRef, exportCSV } = usePrimeDataTable()
+const { tableData, filters, dataTableRef, exportCSV } = usePrimeDataTable();
 
 filters.value = {
   global: { value: null, matchMode: FilterMatchMode.CONTAINS },
   name: { value: null, matchMode: FilterMatchMode.CONTAINS },
   code: { value: null, matchMode: FilterMatchMode.CONTAINS },
-  inventoryStatus: { value: null, matchMode: FilterMatchMode.STARTS_WITH }
-}
+  inventoryStatus: { value: null, matchMode: FilterMatchMode.STARTS_WITH },
+};
 
-const dataStore = useDataStore()
+const dataStore = useDataStore();
 
 onMounted(async () => {
-  await dataStore.initData()
-  tableData.value = dataStore.products
-})
+  await dataStore.initData();
+  tableData.value = dataStore.products;
+});
 </script>
 
 <template>
@@ -42,7 +42,10 @@ onMounted(async () => {
             <span class="text-xl">Products</span>
             <span class="p-input-icon-left">
               <i class="pi pi-search" />
-              <InputText v-model="filters.global.value" placeholder="Globale Suche" />
+              <InputText
+                v-model="filters.global.value"
+                placeholder="Globale Suche"
+              />
             </span>
           </div>
         </div>
@@ -50,14 +53,34 @@ onMounted(async () => {
       <template #empty>
         No Data Found.
       </template>
-      <Column field="name" header="Name" :sortable="true" />
-      <Column field="code" header="Code" :sortable="true" />
-      <Column field="price" header="Price" :sortable="true" />
-      <Column field="inventoryStatus" header="Status" :sortable="true" />
+      <Column
+        field="name"
+        header="Name"
+        :sortable="true"
+      />
+      <Column
+        field="code"
+        header="Code"
+        :sortable="true"
+      />
+      <Column
+        field="price"
+        header="Price"
+        :sortable="true"
+      />
+      <Column
+        field="inventoryStatus"
+        header="Status"
+        :sortable="true"
+      />
       <template #footer>
         <div class="flex justify-between">
           <span class="text-2xl">{{ tableData ? tableData.length : 0 }} Products</span>
-          <Button icon="pi pi-external-link" label="Export" @click="exportCSV" />
+          <Button
+            icon="pi pi-external-link"
+            label="Export"
+            @click="exportCSV"
+          />
         </div>
       </template>
       <template #paginatorRight />

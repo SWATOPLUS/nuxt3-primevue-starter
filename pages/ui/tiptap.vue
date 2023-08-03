@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import TipTap from '~/components/tiptap/TipTap.vue'
-const startText = '<p>I’m running Tiptap with Vue.js and Nuxt. 🎉</p>'
-const editorValue = ref(startText)
+import TipTap from '~/components/tiptap/TipTap.vue';
+const startText = '<p>I’m running Tiptap with Vue.js and Nuxt. 🎉</p>';
+const editorValue = ref(startText);
 
 function resetText () {
-  editorValue.value = startText
+  editorValue.value = startText;
 }
 </script>
 
@@ -13,7 +13,11 @@ function resetText () {
     <h5>TipTap as alternative Editor</h5>
 
     <div class="pb-2">
-      <Button size="small" label="Reset" @click="resetText" />
+      <Button
+        size="small"
+        label="Reset"
+        @click="resetText"
+      />
     </div>
     <TipTap v-model="editorValue" />
   </div>

@@ -1,4 +1,4 @@
-import pkg from './package.json'
+import pkg from './package.json';
 
 export default defineNuxtConfig({
   devtools: true,
@@ -6,8 +6,8 @@ export default defineNuxtConfig({
   runtimeConfig: {
     public: {
       APP_VERSION: pkg.version,
-      APP_NAME: pkg.name
-    }
+      APP_NAME: pkg.name,
+    },
   },
   modules: [
     '@formkit/nuxt',
@@ -16,13 +16,13 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@nuxtjs/i18n',
     '@nuxt/content',
-    '@vueuse/nuxt'
+    '@vueuse/nuxt',
   ],
   content: {
     highlight: {
       theme: 'one-dark-pro',
-      preload: ['json', 'js', 'ts', 'html', 'css', 'vue']
-    }
+      preload: ['json', 'js', 'ts', 'html', 'css', 'vue'],
+    },
     // Options
   },
   i18n: {
@@ -32,34 +32,34 @@ export default defineNuxtConfig({
     strategy: 'no_prefix',
     locales: [
       { code: 'en', file: 'en.json', name: 'English' },
-      { code: 'de', file: 'de.json', name: 'German' }
+      { code: 'de', file: 'de.json', name: 'German' },
     ],
 
-    vueI18n: './vue-i18n.options.ts'
+    vueI18n: './vue-i18n.options.ts',
 
   },
   primevue: {
     config: {
-      ripple: true
-    }
+      ripple: true,
+    },
   },
   css: [
     'primevue/resources/primevue.css',
     'primeicons/primeicons.css',
     '@sfxcode/formkit-primevue/dist/sass/formkit-prime-inputs.scss',
-    '@sfxcode/formkit-primevue/dist/sass/formkit-primevue.scss'
+    '@sfxcode/formkit-primevue/dist/sass/formkit-primevue.scss',
   ],
   pinia: {
     autoImports: [
       // automatically imports `defineStore`
-      'defineStore' // import { defineStore } from 'pinia'
-    ]
+      'defineStore', // import { defineStore } from 'pinia'
+    ],
   },
   build: {
-    transpile: ['nuxt', 'primevue']
+    transpile: ['nuxt', 'primevue'],
   },
   sourcemap: {
     client: false,
-    server: true
-  }
-})
+    server: true,
+  },
+});

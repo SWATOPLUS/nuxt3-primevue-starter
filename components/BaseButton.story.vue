@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-import BaseButton from './BaseButton.vue'
+import BaseButton from './BaseButton.vue';
 
 function initState () {
   return {
-    disabled: false
-  }
+    disabled: false,
+  };
 }
 </script>
 

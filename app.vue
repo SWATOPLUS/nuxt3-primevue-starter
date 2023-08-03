@@ -1,7 +1,7 @@
 <script setup>
 useHead({
-  title: 'Nuxt 3 PrimeVue Starter'
-})
+  title: 'Nuxt 3 PrimeVue Starter',
+});
 </script>
 
 <template>
